@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import search from './utils/search.png';
-import user from './utils/user.png';
-import { toggleSideBar } from './utils/appSlice';
+import search from '../utils/search.png';
+import user from '../utils/user.png';
+import { toggleSideBar } from '../utils/appSlice';
 import { Link } from 'react-router-dom';
-import { Youtube_Suggestion } from './utils/constants';
+import { Youtube_Suggestion } from '../utils/constants';
 import { useDispatch,useSelector } from 'react-redux';
-import { cacheSearch } from './utils/searchSlice';
+import { cacheSearch } from '../utils/searchSlice';
 
 export const Head = () => {
     const [searchText,setSearchText] = useState("");

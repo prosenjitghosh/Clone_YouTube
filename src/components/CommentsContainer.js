@@ -74,19 +74,11 @@ const commentsData = [
     },
   ];
 
-
-// const commentsData = [
-//         {
-//           name: "Prosenjit Ghosh",
-//           text: "Lorem ipsum dolor sit amet, consectetur adip",
-//           replies: [],
-//        }
-//     ];
 const CommentsContainer = () => {
     return (
-        <div className="m-5 p-2">
+        <div className="my-6 w-8/12">
           <h1 className="text-2xl font-bold">Comments: </h1>
-          <CommentsList comments={commentsData} />
+            <CommentsList comments={commentsData} />
         </div>
       );
 }
