@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import ChatMessages from './ChatMessages'
 import { useDispatch,useSelector } from 'react-redux'
 import { addMessages } from '../utils/chatSlice'
@@ -6,9 +6,9 @@ import store from '../utils/store'
 import { randomNameGenerator, randomTextGenrator } from '../utils/helper'
 
 const LiveChat = () => {
+  const [liveMessage,setLiveMessage] = useState();
   const dispatch = useDispatch();
   const messages = useSelector((store)=>store.chat.messages);
-  console.log(messages);
 
   useEffect(()=>{
     const timer = setInterval(()=>{
@@ -16,7 +16,7 @@ const LiveChat = () => {
         name:randomNameGenerator(),
         message:randomTextGenrator()
       }));
-    },500)
+    },800)
 
     return ()=>{
       clearInterval(timer);
@@ -25,7 +25,26 @@ const LiveChat = () => {
 
   return (
     <div className="border border-gray-900 mx-10 w-96 rounded-2xl  max-h-[500px] overflow-y-scroll flex flex-col-reverse">
-      <div className="bg-slate-200  rounded-t-2xl px-10 py-2 h-10">Live chat</div> 
+      <div className="px-2">
+        <form onSubmit={(e)=>{
+          e.preventDefault();
+          dispatch(addMessages({
+            name:"Prosenjit",
+            message:liveMessage
+          }))
+          setLiveMessage("");
+        }}>
+          <input
+          className='border border-y border-slate-800 m-2 w-9/12 rounded-2xl'
+          placeholder='Say somthing...'
+            value={liveMessage}
+            onChange={(e)=>{
+              setLiveMessage(e.target.value)
+            }}
+            type="text"></input>
+          <button className="px-2 bg-slate-400 rounded-2xl">send</button>
+        </form>
+      </div>
       <div className="p-2">
         {
           messages.map((message,index)=>{
@@ -35,9 +54,9 @@ const LiveChat = () => {
             />)
           })
         }
-        
 
       </div>
+       
     </div>
   )
 }
