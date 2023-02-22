@@ -8,7 +8,7 @@ export const Body= () => {
     <div>
         <Head/>
         <div className='flex'>
-            <div className="basis-6">
+            <div className="w-[18rem]">
                 <SideBar/>
             </div>
             <Outlet/>

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import search from '../utils/search.png';
 import user from '../utils/user.png';
+import logo from '../utils/logo.png'
 import { toggleSideBar } from '../utils/appSlice';
 import { Link } from 'react-router-dom';
 import { Youtube_Suggestion } from '../utils/constants';
@@ -55,8 +56,8 @@ export const Head = () => {
             <Link to="/">
                 <img
                 alt="logo"
-                className='h-10'
-                src="https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg"/>
+                className='h-12'
+                src={logo}/>
             </Link>
         </div>
 

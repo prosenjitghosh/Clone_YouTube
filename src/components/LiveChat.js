@@ -35,7 +35,7 @@ const LiveChat = () => {
           setLiveMessage("");
         }}>
           <input
-          className='border border-y border-slate-800 m-2 w-9/12 rounded-2xl'
+          className='border pl-3 border-y border-slate-800 m-2 w-9/12 rounded-2xl'
           placeholder='Say somthing...'
             value={liveMessage}
             onChange={(e)=>{
