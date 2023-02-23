@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import search from '../utils/search.png';
-import user from '../utils/user.png';
 import logo from '../utils/logo.png'
 import { toggleSideBar } from '../utils/appSlice';
 import { Link } from 'react-router-dom';
 import { Youtube_Suggestion } from '../utils/constants';
 import { useDispatch,useSelector } from 'react-redux';
 import { cacheSearch } from '../utils/searchSlice';
+import Authentication from './Authentication';
 
 export const Head = () => {
     const [searchText,setSearchText] = useState("");
@@ -86,11 +86,12 @@ export const Head = () => {
                 </ul>
             </div>}
         </div>
-        <div className="col-span-1 right-0">
+        <Authentication/>
+        {/* <div className="col-span-1 right-0">
             <img alt="user" className='h-8' 
             src={user}
             />
-        </div>
+        </div> */}
         
         </div>
         
