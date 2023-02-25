@@ -5,9 +5,9 @@ export const ButtonList = () => {
   
 
   return (
-    <div className='flex flex-row'>
+    <div className='flex flex-row h-12 truncate items-center w-[70vw]'>
         {buttons.map((button,index)=>{
-          return <button className="border-2 p-1 m-2 rounded-lg">{button}</button>
+          return <span  key={index} className="border-2 p-1 m-2 rounded-lg">{button}</span>
         })
     }
     </div>
