@@ -3,8 +3,7 @@ import { useAuth0 } from '@auth0/auth0-react';
 import userimg from '../utils/user.png';
 
 const Authentication = () => {
-const {loginWithRedirect, logout,user, isAuthenticated} = useAuth0();
-console.log(user);
+const {loginWithRedirect, logout, isAuthenticated} = useAuth0();
 
   return (
     <div>

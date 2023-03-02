@@ -76,7 +76,7 @@ const commentsData = [
 
 const CommentsContainer = () => {
     return (
-        <div className="my-6 w-8/12">
+        <div className="my-6 w-full md:w-8/12">
           <h1 className="text-2xl font-bold">Comments: </h1>
             <CommentsList comments={commentsData} />
         </div>

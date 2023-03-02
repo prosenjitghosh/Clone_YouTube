@@ -24,13 +24,13 @@ const LiveChat = () => {
   },[])
 
   return (
-    <div className="border border-gray-900 mx-10 w-96 rounded-2xl  max-h-[500px] overflow-y-scroll flex flex-col-reverse">
+    <div className="border border-gray-900 sm:mx-10 mt-4 md:mt-0 w-full rounded-2xl  aspect-square overflow-y-scroll flex flex-col-reverse">
       <div className="px-2">
         <form onSubmit={(e)=>{
           e.preventDefault();
           dispatch(addMessages({
             name:"Prosenjit",
-            message:liveMessage
+            message:liveMessage 
           }))
           setLiveMessage("");
         }}>
